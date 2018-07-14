@@ -13,27 +13,25 @@ import com.google.common.annotations.Beta;
  */
 @Beta
 public final class JCollections {
+  // Suppresses default constructor, ensuring non-instantiability.
+  private JCollections() {
+    throw new AssertionError();
+  }
 
-	// Suppresses default constructor, ensuring non-instantiability.
-	private JCollections() {
-		throw new AssertionError();
-	}
-
-	/**
-	 * Convert the specified collection to a new array.
-	 * 
-	 * @param collection
-	 *            a {@link Collection}
-	 * @param type
-	 *            the generic type
-	 * @return a new array having the same elements of the specified collection
-	 */
-	@Beta
-	@Nonnull
-	public static <T> T[] toArray(@Nonnull final Collection<T> collection, @Nonnull final Class<T> type) {
-		// Use Array native method to create array of a type only known at run time
-		@SuppressWarnings("unchecked")
-		final T[] array = (T[]) Array.newInstance(type, collection.size());
-		return collection.toArray(array);
-	}
+  /**
+   * Convert the specified collection to a new array.
+   * 
+   * @param collection a {@link Collection}
+   * @param type the generic type
+   * @return a new array having the same elements of the specified collection
+   */
+  @Beta
+  @Nonnull
+  public static <T> T[] toArray(@Nonnull final Collection<T> collection,
+      @Nonnull final Class<T> type) {
+    // Use Array native method to create array of a type only known at run time
+    @SuppressWarnings("unchecked")
+    final T[] array = (T[]) Array.newInstance(type, collection.size());
+    return collection.toArray(array);
+  }
 }

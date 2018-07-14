@@ -13,16 +13,15 @@ import org.joda.time.format.DateTimeParser;
  * @see LocalDateTime
  */
 public final class JLocalDateTimes {
+  // Suppresses default constructor, ensuring non-instantiability.
+  private JLocalDateTimes() {
+    throw new AssertionError();
+  }
 
-	// Suppresses default constructor, ensuring non-instantiability.
-	private JLocalDateTimes() {
-		throw new AssertionError();
-	}
-
-	@Nonnull
-	public static LocalDateTime parse(@Nonnull final String text, @Nonnull final String pattern) {
-		final DateTimeParser parser = DateTimeFormat.forPattern(pattern).getParser();
-		final DateTimeFormatter formatter = new DateTimeFormatter(null, parser);
-		return formatter.parseLocalDateTime(text);
-	}
+  @Nonnull
+  public static LocalDateTime parse(@Nonnull final String text, @Nonnull final String pattern) {
+    final DateTimeParser parser = DateTimeFormat.forPattern(pattern).getParser();
+    final DateTimeFormatter formatter = new DateTimeFormatter(null, parser);
+    return formatter.parseLocalDateTime(text);
+  }
 }

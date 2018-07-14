@@ -13,16 +13,15 @@ import org.joda.time.format.DateTimeParser;
  * @see DateTime
  */
 public final class JDateTimes {
+  // Suppresses default constructor, ensuring non-instantiability.
+  private JDateTimes() {
+    throw new AssertionError();
+  }
 
-	// Suppresses default constructor, ensuring non-instantiability.
-	private JDateTimes() {
-		throw new AssertionError();
-	}
-
-	@Nonnull
-	public static DateTime parse(@Nonnull final String text, @Nonnull final String pattern) {
-		final DateTimeParser parser = DateTimeFormat.forPattern(pattern).getParser();
-		final DateTimeFormatter formatter = new DateTimeFormatter(null, parser);
-		return formatter.parseDateTime(text);
-	}
+  @Nonnull
+  public static DateTime parse(@Nonnull final String text, @Nonnull final String pattern) {
+    final DateTimeParser parser = DateTimeFormat.forPattern(pattern).getParser();
+    final DateTimeFormatter formatter = new DateTimeFormatter(null, parser);
+    return formatter.parseDateTime(text);
+  }
 }

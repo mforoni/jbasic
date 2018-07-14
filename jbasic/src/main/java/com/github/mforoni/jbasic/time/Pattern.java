@@ -11,53 +11,52 @@ import com.google.common.annotations.Beta;
  */
 @Beta
 public enum Pattern {
-	// TODO add non numeric patterns
-	/**
-	 * yyyy-MM-dd
-	 */
-	YYYY_MM_DD_HYPEN("YYYY-MM-DD"),
-	/**
-	 * yyyy/MM/dd
-	 */
-	YYYY_MM_DD_SLASH("yyyy/MM/dd"),
-	/**
-	 * yyyyMMdd
-	 */
-	YYYYMMDD("yyyyMMdd"),
-	/**
-	 * MM-dd-yyyy
-	 */
-	MM_DD_YYYY_HYPEN("MM-dd-yyyy"),
-	/**
-	 * MM/dd/yyyy
-	 */
-	MM_DD_YYYY_SLASH("MM/dd/yyyy"),
-	/**
-	 * MMddyyyy
-	 */
-	MMDDYYYY("MMddyyyy"),
-	/**
-	 * dd-MM-yyyy
-	 */
-	DD_MM_YYYY_HYPEN("dd-MM-yyyy"),
-	/**
-	 * dd/MM/yyyy
-	 */
-	DD_MM_YYYY_SLASH("dd/MM/yyyy"),
-	/**
-	 * ddMMyyyy
-	 */
-	DDMMYYYY("ddMMyyyy");
+  // TODO add non numeric patterns
+  /**
+   * yyyy-MM-dd
+   */
+  YYYY_MM_DD_HYPEN("YYYY-MM-DD"),
+  /**
+   * yyyy/MM/dd
+   */
+  YYYY_MM_DD_SLASH("yyyy/MM/dd"),
+  /**
+   * yyyyMMdd
+   */
+  YYYYMMDD("yyyyMMdd"),
+  /**
+   * MM-dd-yyyy
+   */
+  MM_DD_YYYY_HYPEN("MM-dd-yyyy"),
+  /**
+   * MM/dd/yyyy
+   */
+  MM_DD_YYYY_SLASH("MM/dd/yyyy"),
+  /**
+   * MMddyyyy
+   */
+  MMDDYYYY("MMddyyyy"),
+  /**
+   * dd-MM-yyyy
+   */
+  DD_MM_YYYY_HYPEN("dd-MM-yyyy"),
+  /**
+   * dd/MM/yyyy
+   */
+  DD_MM_YYYY_SLASH("dd/MM/yyyy"),
+  /**
+   * ddMMyyyy
+   */
+  DDMMYYYY("ddMMyyyy");
+  private final String s;
 
-	private final String s;
+  private Pattern(final String s) {
+    this.s = s;
+  }
 
-	private Pattern(final String s) {
-		this.s = s;
-	}
-
-	@Nonnull
-	public String get() {
-		return s;
-	}
-	// TODO public boolean isNumeric() {} ?
+  @Nonnull
+  public String get() {
+    return s;
+  }
+  // TODO public boolean isNumeric() {} ?
 }
