@@ -14,7 +14,7 @@ This project is a collection of high quality, extremely useful and widely apprec
 
 * [JavaVerbalExpressions](https://github.com/VerbalExpressions/JavaVerbalExpressions): provides efficient APIs for building complex regular expression.
 
-Over this APIs some new utilities are provided to enhance I/O operations, reflection capabilities, date/time detection and automated parsing, primitive types and primitive wrappers manipulation.
+Over these APIs new utilities are provided to enhance I/O operations, reflection capabilities, date/time detection and automated parsing, primitive types and primitive wrappers manipulation.
 
 ## Built With
 
@@ -28,11 +28,11 @@ Over this APIs some new utilities are provided to enhance I/O operations, reflec
 
 * One build automation tool:
    * [Maven](https://maven.apache.org/download.cgi)
-   * [Gradle](https://gradle.org/)
+   * [Gradle](https://gradle.org)
 
 ### Adding JBasic to your build
 
-This project is not yet available on the official maven repository but with [JitPack](https://jitpack.io/) 
+This project is not yet available on the official maven repository but with [JitPack](https://jitpack.io) 
 it can easily be overcome just by following these two steps:
 
 1. Add the JitPack repository to your build file
