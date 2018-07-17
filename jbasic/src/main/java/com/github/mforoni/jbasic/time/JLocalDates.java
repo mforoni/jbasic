@@ -185,11 +185,11 @@ public final class JLocalDates {
   }
 
   public static boolean isParsable(@Nonnull final String text) {
-    return inferredLocalDates(text).size() > 0 ? true : false;
+    return inferredLocalDates(text).size() > 0;
   }
 
   public static boolean isParsable(@Nonnull final String text, @Nonnull final String[] patterns) {
-    return inferredLocalDates(text, patterns).size() > 0 ? true : false;
+    return inferredLocalDates(text, patterns).size() > 0;
   }
 
   /**
