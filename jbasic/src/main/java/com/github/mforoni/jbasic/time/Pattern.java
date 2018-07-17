@@ -50,7 +50,7 @@ public enum Pattern {
   DDMMYYYY("ddMMyyyy");
   private final String s;
 
-  private Pattern(final String s) {
+  Pattern(final String s) {
     this.s = s;
   }
 
