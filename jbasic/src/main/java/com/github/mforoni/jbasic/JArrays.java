@@ -73,7 +73,7 @@ public final class JArrays {
    */
   public static boolean containsIgnoreCase(@Nonnull final String[] array,
       @Nullable final String key) {
-    return indexOfIgnoreCase(array, key) == -1 ? false : true;
+    return indexOfIgnoreCase(array, key) != -1;
   }
 
   /**
@@ -156,7 +156,7 @@ public final class JArrays {
    * @see Objects#equals(Object, Object)
    */
   public static <T> boolean contains(@Nonnull final T[] array, @Nullable final T key) {
-    return indexOf(array, key) == -1 ? false : true;
+    return indexOf(array, key) != -1;
   }
 
   /**
@@ -206,7 +206,7 @@ public final class JArrays {
    */
   public static <T extends Number, U extends Number> boolean contains(@Nonnull final T[] array,
       @Nullable final U key) {
-    return indexOf(array, key, 0) == -1 ? false : true;
+    return indexOf(array, key, 0) != -1;
   }
 
   /**
