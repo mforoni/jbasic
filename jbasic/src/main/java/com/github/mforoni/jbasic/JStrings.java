@@ -217,6 +217,14 @@ public final class JStrings {
     return sb.toString();
   }
 
+  public static String concat(@Nonnull final List<String> strings) {
+    final StringBuilder sb = new StringBuilder();
+    for (final String s : strings) {
+      sb.append(s);
+    }
+    return sb.toString();
+  }
+
   /**
    * Returns the string {@code s} with the character at position {@code index} converted in lower
    * case.
