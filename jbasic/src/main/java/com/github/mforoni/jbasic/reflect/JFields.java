@@ -35,8 +35,8 @@ public final class JFields {
   public static final Function<Field, String> GET_NAME = new Function<Field, String>() {
     @Nullable
     @Override
-    public String apply(@Nullable final Field input) {
-      return input == null ? null : input.getName();
+    public String apply(@Nullable final Field field) {
+      return field == null ? null : field.getName();
     }
   };
   /**
@@ -47,8 +47,8 @@ public final class JFields {
    */
   public static final Predicate<Field> IS_FINAL = new Predicate<Field>() {
     @Override
-    public boolean apply(@Nonnull final Field input) {
-      return isFinal(input);
+    public boolean apply(@Nullable final Field field) {
+      return field != null ? isFinal(field) : false;
     }
   };
   /**
@@ -59,8 +59,8 @@ public final class JFields {
    */
   public static final Predicate<Field> IS_PUBLIC = new Predicate<Field>() {
     @Override
-    public boolean apply(@Nonnull final Field input) {
-      return isPublic(input);
+    public boolean apply(@Nullable final Field field) {
+      return field != null ? isPublic(field) : false;
     }
   };
   /**
@@ -71,8 +71,8 @@ public final class JFields {
    */
   public static final Predicate<Field> IS_STATIC = new Predicate<Field>() {
     @Override
-    public boolean apply(@Nonnull final Field input) {
-      return isStatic(input);
+    public boolean apply(@Nullable final Field field) {
+      return field != null ? isStatic(field) : false;
     }
   };
   /**
@@ -83,8 +83,8 @@ public final class JFields {
    */
   public static final Predicate<Field> IS_NOT_STATIC = new Predicate<Field>() {
     @Override
-    public boolean apply(@Nonnull final Field input) {
-      return !isStatic(input);
+    public boolean apply(@Nullable final Field field) {
+      return field != null ? !isStatic(field) : false;
     }
   };
   /**
@@ -95,8 +95,8 @@ public final class JFields {
    */
   public static final Predicate<Field> IS_PRIVATE = new Predicate<Field>() {
     @Override
-    public boolean apply(@Nullable final Field input) {
-      return isPrivate(input);
+    public boolean apply(@Nullable final Field field) {
+      return field != null ? isPrivate(field) : false;
     }
   };
 
@@ -165,8 +165,8 @@ public final class JFields {
         ImmutableSet.<String>builder().add(fieldName).add(otherFieldNames).build();
     final Predicate<Field> matchNames = new Predicate<Field>() {
       @Override
-      public boolean apply(@Nonnull final Field input) {
-        return names.contains(input.getName());
+      public boolean apply(@Nonnull final Field field) {
+        return field != null ? names.contains(field.getName()) : false;
       }
     };
     return fromType(type, matchNames);
