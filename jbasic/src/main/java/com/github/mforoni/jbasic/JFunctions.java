@@ -24,8 +24,8 @@ public final class JFunctions {
   public static final Function<Object, String> OBJECT_TO_STRING = new Function<Object, String>() {
     @Nullable
     @Override
-    public String apply(@Nullable final Object input) {
-      return input != null ? String.valueOf(input) : null;
+    public String apply(@Nullable final Object obj) {
+      return obj != null ? String.valueOf(obj) : null;
     }
   };
   /**
@@ -37,8 +37,8 @@ public final class JFunctions {
       new Function<String, Integer>() {
         @Nullable
         @Override
-        public Integer apply(@Nullable final String input) {
-          return input != null ? Ints.tryParse(input) : null;
+        public Integer apply(@Nullable final String s) {
+          return s != null ? Ints.tryParse(s) : null;
         }
       };
   /**
@@ -50,8 +50,8 @@ public final class JFunctions {
       new Function<String, Boolean>() {
         @Nullable
         @Override
-        public Boolean apply(@Nullable final String input) {
-          return input != null ? Boolean.parseBoolean(input) : null;
+        public Boolean apply(@Nullable final String s) {
+          return s != null ? Boolean.parseBoolean(s) : null;
         }
       };
 }
