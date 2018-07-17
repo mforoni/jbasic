@@ -64,7 +64,7 @@ public final class JNumbers {
    */
   public static boolean equals(@Nullable final Number n1, @Nullable final Number n2) {
     if (n1 == null || n2 == null) {
-      return n1 == null && n2 == null ? true : false;
+      return n1 == null && n2 == null;
     }
     return compare(n1, n2) == 0;
   }

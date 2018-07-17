@@ -276,7 +276,6 @@ public final class JStrings {
   }
 
   @Beta
-  @Nonnull
   public static boolean isUpperCase(@Nonnull final String s) {
     return s.equals(s.toUpperCase());
   }
@@ -290,7 +289,7 @@ public final class JStrings {
    * @return <tt>true</tt> if the string {@code s} contains the character {@code c}
    */
   public static boolean contains(@Nonnull final String s, final char c) {
-    return s.indexOf(c) != -1 ? true : false;
+    return s.indexOf(c) != -1;
   }
 
   /**
