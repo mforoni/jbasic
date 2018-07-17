@@ -42,7 +42,7 @@ final class JTestDemo {
   }
 
   public static void main(final String[] args) {
-    new SortingTest(MoreInts.newRandomArray(25000, -20, 650)).start().log();;
-    new SortingTest(MoreInts.newRandomArray(150000, -20, 650)).start().log();;
+    new SortingTest(MoreInts.newRandomArray(25000, -20, 650)).start().log();
+    new SortingTest(MoreInts.newRandomArray(150000, -20, 650)).start().log();
   }
 }
