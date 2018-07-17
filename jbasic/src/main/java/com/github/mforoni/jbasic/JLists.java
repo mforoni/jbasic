@@ -32,7 +32,7 @@ public final class JLists {
    */
   public static boolean containsIgnoreCase(@Nonnull final List<String> list,
       @Nonnull final String key) {
-    return indexOfIgnoreCase(list, key, 0) == -1 ? false : true;
+    return indexOfIgnoreCase(list, key, 0) != -1;
   }
 
   /**
