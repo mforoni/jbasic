@@ -55,7 +55,7 @@ public final class JBeans {
   public static Optional<Method> optionalGetter(@Nonnull final Class<?> beanClass,
       @Nonnull final String propertyName) {
     try {
-      return Optional.of(getter(beanClass, propertyName));
+      return Optional.fromNullable(getter(beanClass, propertyName));
     } catch (final IntrospectionException e) {
       return Optional.absent();
     }
@@ -97,7 +97,7 @@ public final class JBeans {
   public static Optional<Method> optionalSetter(@Nonnull final Class<?> beanClass,
       @Nonnull final String propertyName) {
     try {
-      return Optional.of(setter(beanClass, propertyName));
+      return Optional.fromNullable(setter(beanClass, propertyName));
     } catch (final IntrospectionException e) {
       return Optional.absent();
     }
