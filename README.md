@@ -1,3 +1,5 @@
+[![build_status](https://travis-ci.org/mforoni/jbasic.svg?branch=master)](https://travis-ci.org/mforoni/jbasic)
+
 # JBasic
 
 This project is a collection of high quality, extremely useful and widely appreciated APIs targeting Java 1.7:
