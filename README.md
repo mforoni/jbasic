@@ -1,4 +1,5 @@
 [![build_status](https://travis-ci.org/mforoni/jbasic.svg?branch=master)](https://travis-ci.org/mforoni/jbasic)
+[![Release](https://jitpack.io/v/com.github.mforoni/jbasic.svg)](https://jitpack.io/#com.github.mforoni/jbasic)
 
 # JBasic
 
@@ -52,7 +53,7 @@ it can easily be overcome just by following these two steps:
 
 ```xml
 <dependency>
-  <groupId>com.github.mforoni</groupId>
+  <groupId>com.github.mforoni.jbasic</groupId>
   <artifactId>jbasic</artifactId>
   <version>master-SNAPSHOT</version>
 </dependency>
@@ -69,7 +70,7 @@ allprojects {
 }
 
 dependencies {
-  implementation 'com.github.mforoni:jbasic:master-SNAPSHOT'
+  implementation 'com.github.mforoni.jbasic:jbasic:master-SNAPSHOT'
 }
 ```
 
@@ -84,7 +85,6 @@ This project follow the [Google Java Style Guide](https://google.github.io/style
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mforoni/jbasic/blob/master/LICENSE) file for details
-
 
 ## IMPORTANT WARNINGS
 
