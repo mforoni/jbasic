@@ -57,7 +57,7 @@ public final class JBooleans {
    * @throws IllegalArgumentException
    * @see Preconditions#checkNotNull(Object)
    */
-  public static boolean parse(@Nonnull final String s) {
+  public static boolean parse(@Nonnull final String s) throws IllegalArgumentException {
     Preconditions.checkNotNull(s);
     if (s.equalsIgnoreCase(YES) || s.equalsIgnoreCase(TRUE)) {
       return true;

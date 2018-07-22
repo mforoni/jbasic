@@ -15,7 +15,7 @@ public enum Pattern {
   /**
    * yyyy-MM-dd
    */
-  YYYY_MM_DD_HYPEN("YYYY-MM-DD"),
+  YYYY_MM_DD_HYPEN("yyyy-MM-dd"),
   /**
    * yyyy/MM/dd
    */
