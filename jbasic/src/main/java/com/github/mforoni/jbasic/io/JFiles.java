@@ -32,10 +32,15 @@ public final class JFiles {
   public static final String USER_DIR = System.getProperty("user.dir");
   public static final Charset CHARSET_UTF8 = Charset.forName("UTF-8");
   public static final Path SRC_MAIN_JAVA = Paths.get("src", "main", "java");
+  private static final String CSV = "csv";
 
   // Suppresses default constructor, ensuring non-instantiability.
   private JFiles() {
     throw new AssertionError();
+  }
+
+  public static boolean isCsv(@Nonnull final File file) {
+    return com.google.common.io.Files.getFileExtension(file.getName()).equalsIgnoreCase(CSV);
   }
 
   /**
