@@ -74,7 +74,7 @@ public final class JEnums {
    * "normalized" given strings {@code name} where:
    * <ul>
    * <li>the input value is converted to upper case</li>
-   * <li>all punctuation is removed</li>
+   * <li>all punctuation except _ is removed</li>
    * <li>and all consecutive occurrences of space are replaced with one underscore character.</li>
    * 
    * @param enumClass an {@code Enum} type
@@ -88,6 +88,6 @@ public final class JEnums {
   public static <E extends Enum<E>> E conventionalValueOf(@Nonnull final Class<E> enumClass,
       @Nonnull final String name) {
     return Enum.valueOf(enumClass,
-        name.toUpperCase().replaceAll("\\p{P}", "").replaceAll("\\s+", "_"));
+        name.toUpperCase().replaceAll("[\\p{Punct}&&[^_]]+", "").replaceAll("\\s+", "_"));
   }
 }

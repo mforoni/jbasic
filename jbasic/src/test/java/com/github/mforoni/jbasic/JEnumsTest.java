@@ -16,6 +16,9 @@ public class JEnumsTest {
   private enum TestEnum {
     FIRST, SECOND, THIRD, FORTH, FIFTH
   }
+  private enum Weapon {
+    DRAGONSTONE, STAFF, BOW, DAGGER, SWORD, LANCE, AXE, RED_TOME, BLUE_TOME, GREEN_TOME, BEAST_WEAPON
+  }
 
   @Test
   public void testNewArray() {
@@ -43,5 +46,7 @@ public class JEnumsTest {
       // do nothing
     }
     assertEquals(TestEnum.FORTH, JEnums.conventionalValueOf(TestEnum.class, "forth."));
+    assertEquals(Weapon.RED_TOME, JEnums.conventionalValueOf(Weapon.class, "RED TOME"));
+    assertEquals(Weapon.RED_TOME, JEnums.conventionalValueOf(Weapon.class, "RED_TOME"));
   }
 }
