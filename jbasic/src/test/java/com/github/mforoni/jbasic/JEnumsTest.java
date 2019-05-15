@@ -6,7 +6,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
-import com.github.mforoni.jbasic.JEnums;
 
 /**
  * @author Foroni Marco
@@ -43,6 +42,6 @@ public class JEnumsTest {
     } catch (final IllegalArgumentException e) {
       // do nothing
     }
-    assertEquals(TestEnum.FORTH, JEnums.conventionalValueOf(TestEnum.class, "forth"));
+    assertEquals(TestEnum.FORTH, JEnums.conventionalValueOf(TestEnum.class, "forth."));
   }
 }

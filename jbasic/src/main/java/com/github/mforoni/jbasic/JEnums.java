@@ -71,8 +71,11 @@ public final class JEnums {
 
   /**
    * Returns the {@code Enum} constant of the specified {@code Enum} type having name equals to the
-   * given strings {@code name} converted to upper case and whose occurrences of spaces are replaced
-   * with the underscore character.
+   * "normalized" given strings {@code name} where:
+   * <ul>
+   * <li>the input value is converted to upper case</li>
+   * <li>all punctuation is removed</li>
+   * <li>and all consecutive occurrences of space are replaced with one underscore character.</li>
    * 
    * @param enumClass an {@code Enum} type
    * @param name
@@ -84,6 +87,7 @@ public final class JEnums {
   @Nonnull
   public static <E extends Enum<E>> E conventionalValueOf(@Nonnull final Class<E> enumClass,
       @Nonnull final String name) {
-    return Enum.valueOf(enumClass, name.toUpperCase().replaceAll(" ", "_"));
+    return Enum.valueOf(enumClass,
+        name.toUpperCase().replaceAll("\\p{P}", "").replaceAll("\\s+", "_"));
   }
 }
