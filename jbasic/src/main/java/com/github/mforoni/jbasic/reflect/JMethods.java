@@ -3,6 +3,8 @@ package com.github.mforoni.jbasic.reflect;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import com.github.mforoni.jbasic.JStrings;
@@ -23,12 +25,31 @@ public class JMethods {
   }
 
   /**
+   * Returns a list containing all the methods defined in the given type and or its superclasses.
+   * 
+   * @param type
+   * @return a list containing all the methods defined in the given type or its superclasses.
+   */
+  public static List<Method> ofType(final Class<?> type) {
+    final List<Method> list = new ArrayList<>();
+    Class<?> superType = type;
+    do {
+      final Method[] methods = superType.getDeclaredMethods();
+      for (final Method method : methods) {
+        list.add(method);
+      }
+      superType = superType.getSuperclass();
+    } while (superType != null);
+    return list;
+  }
+
+  /**
    * Returns the getter method name for the field having name {@code fieldName} declared in the
    * specified {@code Class} {@code type}.
    * 
    * @param type the {@code Class} containing the field
    * @param fieldName the name of the field
-   * @return a {@code String} containing the getter method name
+   * @return a {@code String} containing the getter method name.
    */
   @Nonnull
   public static String getterName(@Nonnull final Class<?> type, @Nonnull final String fieldName) {
@@ -139,11 +160,12 @@ public class JMethods {
   }
 
   public static void invokeSetter(@Nonnull final Method setter, @Nonnull final Object instance,
-      @Nonnull final Object value) throws IllegalStateException, IllegalArgumentException {
+      @Nonnull final Object value) throws IllegalStateException {
     try {
       setter.invoke(instance, value);
-    } catch (IllegalAccessException | InvocationTargetException e) {
-      throw new IllegalStateException(e);
+    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+      throw new IllegalStateException(String
+          .format("Cannot invoke setter %s on object %s with value %s", setter, instance, value));
     }
   }
 
