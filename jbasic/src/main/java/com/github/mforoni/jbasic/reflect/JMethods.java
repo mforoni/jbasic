@@ -164,8 +164,8 @@ public class JMethods {
     try {
       setter.invoke(instance, value);
     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-      throw new IllegalStateException(String
-          .format("Cannot invoke setter %s on object %s with value %s", setter, instance, value));
+      throw new IllegalStateException(String.format(
+          "Cannot invoke setter %s on object %s with value %s", setter, instance, value), e);
     }
   }
 
