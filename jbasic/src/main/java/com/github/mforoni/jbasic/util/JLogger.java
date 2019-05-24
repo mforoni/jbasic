@@ -187,8 +187,8 @@ public final class JLogger {
   @Beta
   public static <T> void tailInfo(@Nonnull final T[] array, final int limit,
       final Function<T, String> toMessage) {
-    LOGGER.info("Logging the first {} elements of {} starting from the end", array.length);
     final int max = array.length > limit ? limit : array.length;
+    LOGGER.info("Logging the first {} elements of {} starting from the end", max, array.length);
     final int last = array.length;
     for (int i = last - 1; i >= last - max; i--) {
       LOGGER.info(toMessage.apply(array[i]));
