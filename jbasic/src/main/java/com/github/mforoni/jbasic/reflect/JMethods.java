@@ -192,7 +192,8 @@ public class JMethods {
     try {
       return getter.invoke(instance);
     } catch (IllegalAccessException | InvocationTargetException e) {
-      throw new IllegalStateException(e);
+      throw new IllegalStateException(
+          String.format("Cannot invoke method %s on instance %s", getter, instance), e);
     }
   }
 }
